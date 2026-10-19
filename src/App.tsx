@@ -1,17 +1,12 @@
-import { Component, type ErrorInfo, type ReactNode } from "react";
+import { Component, lazy, Suspense, type ErrorInfo, type ReactNode } from "react";
 import { HeaderHero } from "@/components/vittahii/HeaderHero";
-import { Legacy } from "@/components/vittahii/Legacy";
-import { Timeline } from "@/components/vittahii/Timeline";
-import { Ghee } from "@/components/vittahii/Ghee";
-import { Why } from "@/components/vittahii/Why";
-import { Process } from "@/components/vittahii/Process";
-import { Quality } from "@/components/vittahii/Quality";
-import { BrandStory } from "@/components/vittahii/BrandStory";
-import { Founder } from "@/components/vittahii/Founder";
-import { ProductRange } from "@/components/vittahii/ProductRange";
-import { Contact } from "@/components/vittahii/Contact";
-import { Footer } from "@/components/vittahii/Footer";
 import { reportLovableError } from "@/lib/lovable-error-reporting";
+
+const BelowFold = lazy(() =>
+  import("@/components/vittahii/BelowFold").then(({ BelowFold: Component }) => ({
+    default: Component,
+  })),
+);
 
 type ErrorBoundaryState = { hasError: boolean };
 
@@ -51,17 +46,9 @@ export function App() {
     <ErrorBoundary>
       <main className="vittahii-page">
         <HeaderHero />
-        <Legacy />
-        <Timeline />
-        <Ghee />
-        <Why />
-        <Process />
-        <Quality />
-        <BrandStory />
-        <Founder />
-        <ProductRange />
-        <Contact />
-        <Footer />
+        <Suspense fallback={null}>
+          <BelowFold />
+        </Suspense>
       </main>
     </ErrorBoundary>
   );

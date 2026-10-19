@@ -3,10 +3,10 @@ import { describe, expect, it } from "vitest";
 import { App } from "@/App";
 
 describe("App", () => {
-  it("renders the Vittahii landing page", () => {
+  it("renders the Vittahii landing page", async () => {
     render(<App />);
 
     expect(screen.getByRole("heading", { name: /rooted in pure richness/i })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /made with care/i })).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: /made with care/i })).toBeInTheDocument();
   });
 });

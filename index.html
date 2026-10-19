@@ -20,7 +20,7 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.vittahiighee.com/" />
-    <meta property="og:image" content="https://www.vittahiighee.com/images/drive/Vittahii%20Logo%201.png" />
+    <meta property="og:image" content="https://www.vittahiighee.com/images/optimized/Vittahii%20Logo%201.webp" />
     <meta property="og:image:alt" content="Vittahii Pure Ghee" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Vittahii Pure Ghee | Rooted in Pure Richness" />
@@ -28,15 +28,24 @@
       name="twitter:description"
       content="Discover Vittahii Pure Ghee, crafted through generations of dairy experience in Maharashtra."
     />
-    <meta name="twitter:image" content="https://www.vittahiighee.com/images/drive/Vittahii%20Logo%201.png" />
+    <meta name="twitter:image" content="https://www.vittahiighee.com/images/optimized/Vittahii%20Logo%201.webp" />
     <meta name="twitter:image:alt" content="Vittahii Pure Ghee" />
+    <link rel="preload" as="image" href="/images/optimized/bde6f4dd-bca4-49cf-b0c7-7809ef7e6e8b.webp" fetchpriority="high" type="image/webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="stylesheet"
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <link rel="icon" href="/images/drive/Vittahii%20Logo%201.png" type="image/png" />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap"
+      />
+    </noscript>
+    <link rel="icon" href="/images/optimized/Vittahii%20Logo%201.webp" type="image/webp" />
     <title>Vittahii Pure Ghee | Premium Desi Ghee from Maharashtra</title>
     <script type="application/ld+json">
       {
@@ -47,7 +56,7 @@
             "@id": "https://www.vittahiighee.com/#organization",
             "name": "Vittahii",
             "url": "https://www.vittahiighee.com/",
-            "logo": "https://www.vittahiighee.com/images/drive/Vittahii%20Logo%201.png",
+            "logo": "https://www.vittahiighee.com/images/optimized/Vittahii%20Logo%201.webp",
             "description": "Vittahii makes Pure Ghee through a blend of dairy experience, traditional wisdom and controlled modern production.",
             "email": "admin@jkpurefoods.com",
             "telephone": "+91-9075967211",
@@ -67,15 +76,31 @@
         ]
       }
     </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QWPV9L15E6"></script>
+    <!-- Google tag (gtag.js), loaded after the first render -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         window.dataLayer.push(arguments);
       }
       gtag('js', new Date());
-      gtag('config', 'G-QWPV9L15E6');
+      (function () {
+        var loaded = false;
+        function loadAnalytics() {
+          if (loaded) return;
+          loaded = true;
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-QWPV9L15E6';
+          document.head.appendChild(script);
+          gtag('config', 'G-QWPV9L15E6');
+        }
+        ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function (eventName) {
+          window.addEventListener(eventName, loadAnalytics, { once: true, passive: true });
+        });
+        window.addEventListener('load', function () {
+          window.setTimeout(loadAnalytics, 8000);
+        }, { once: true });
+      })();
     </script>
   </head>
   <body>

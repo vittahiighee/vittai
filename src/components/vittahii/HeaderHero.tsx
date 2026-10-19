@@ -15,7 +15,7 @@ export function HeaderHero() {
 
   return (
     <section className="hero" id="top" aria-label="Vittahii pure ghee">
-      <img className="hero-photo" src="/images/drive/bde6f4dd-bca4-49cf-b0c7-7809ef7e6e8b.png" alt="Golden ghee poured from a brass ladle into a bowl" width={1773} height={887} fetchPriority="high" />
+      <img className="hero-photo" src="/images/optimized/bde6f4dd-bca4-49cf-b0c7-7809ef7e6e8b.webp" alt="Golden ghee poured from a brass ladle into a bowl" width={1773} height={887} fetchPriority="high" decoding="async" />
       <header className="site-header">
         <BrandMark light />
         <nav id="main-navigation" className={`main-nav${menuOpen ? " main-nav-open" : ""}`} aria-label="Main navigation">
